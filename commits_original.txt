@@ -1,0 +1,130 @@
+ada789f 2023-12-11 21:44:25 +0700 | Add .gitattributes, .gitignore, and README.md.
+f8ec774 2023-12-11 21:44:29 +0700 | Add project files.
+5793a60 2023-12-11 21:47:39 +0700 | Update README.md
+25283ef 2023-12-11 21:55:01 +0700 | Update README.md
+3ed66e2 2023-12-18 11:53:37 +0700 | Create Model for Entity
+ede512a 2023-12-18 11:53:55 +0700 | Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement
+ba79b01 2023-12-18 12:18:29 +0700 | Create DbContext and add some constraint in models classes
+caadb73 2023-12-18 12:55:49 +0700 | update models
+de58576 2023-12-19 09:54:12 +0700 | add dbcontext into program
+d41a093 2023-12-19 10:48:08 +0700 | update models
+8ae71ca 2023-12-19 11:08:14 +0700 | add controllers and CRUD views for all models
+8d7422b 2023-12-19 12:38:39 +0700 | add basic layout
+57c1c60 2023-12-19 15:21:59 +0700 | Xử lý CRUD cơ bản phía admin
+93f77e5 2023-12-19 15:46:13 +0700 | Add or update the Azure App Service build and deployment workflow config
+145e77b 2023-12-19 15:53:32 +0700 | Add or update the Azure App Service build and deployment workflow config
+ea326df 2023-12-19 16:18:40 +0700 | Add or update the Azure App Service build and deployment workflow config
+e4189a3 2023-12-19 16:32:12 +0700 | Add or update the Azure App Service build and deployment workflow config
+0aeb254 2023-12-19 16:36:15 +0700 | create workflow
+7943cbe 2023-12-19 16:36:32 +0700 | Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement
+6536be4 2023-12-19 16:40:22 +0700 | Revert "Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement"
+8b471a9 2023-12-19 16:40:32 +0700 | Revert "create workflow"
+b9265a0 2023-12-19 16:43:58 +0700 | add workflow
+0c7c1e1 2023-12-19 16:51:01 +0700 | create workflow
+84c4661 2023-12-20 08:11:17 +0700 | deploy
+9166d06 2023-12-20 08:12:11 +0700 | deploy
+d117bf0 2023-12-20 08:54:00 +0700 | Set enivroment to produciton
+fd3c9db 2023-12-20 08:55:39 +0700 | set enviroment to production
+ca0cd96 2023-12-20 09:04:13 +0700 | Revert "Set enivroment to produciton"
+3ae5b3b 2023-12-20 09:04:17 +0700 | Revert "set enviroment to production"
+5c0e001 2023-12-20 21:30:37 +0700 | tạo model user và loginviewmodel
+a16c2b2 2023-12-21 12:25:09 +0700 | handle basic login
+67517a5 2023-12-21 12:27:28 +0700 | fix enviroment
+1d07dee 2023-12-21 12:28:47 +0700 | Merge pull request #1 from duyngo0605/duyngo
+52dc39d 2023-12-21 12:30:32 +0700 | remove check development enviroment
+8b21224 2023-12-21 12:33:39 +0700 | Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement
+bc26f33 2023-12-21 12:47:39 +0700 | fix program.cs
+9c2159b 2023-12-21 12:49:31 +0700 | Merge pull request #2 from duyngo0605/master
+eb4ed52 2023-12-21 16:11:57 +0700 | set Role for account when login
+06dc022 2023-12-22 07:33:23 +0700 | set layout base on role
+45b4677 2023-12-22 07:36:56 +0700 | Merge pull request #3 from duyngo0605/duyngo
+39334d1 2023-12-22 12:00:22 +0700 | modify workflow
+ebcde36 2023-12-22 12:00:32 +0700 | Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement
+8c7f5c2 2023-12-22 13:15:21 +0700 | phân quyền cho phép student và teacher chỉ xem được thông tinh cá nhân và lớp học của mình
+436202f 2023-12-22 13:30:26 +0700 | Add Display Name for all models, fix layout
+b4e82d0 2023-12-24 10:42:12 +0700 | handle profile
+58c474d 2023-12-25 08:28:05 +0700 | handle delete user, student, teacher
+bd688d8 2023-12-25 08:28:55 +0700 | Merge pull request #4 from duyngo0605/duyngo
+195164c 2024-01-07 22:54:44 +0700 | Them frontend
+b052bf5 2024-01-07 23:08:01 +0700 | Merge pull request #5 from duyngo0605/dungviet
+2a0a042 2024-01-08 20:31:08 +0700 | Update _Layout.cshtml
+fe73ee1 2024-01-09 20:49:00 +0700 | add navigate for student and teachers
+0fae173 2024-01-08 20:31:08 +0700 | Update _Layout.cshtml
+7c9a354 2024-01-09 20:49:00 +0700 | add navigate for student and teachers
+c4c6e62 2024-01-10 20:41:02 +0700 | Them chuyen man hinh
+d325374 2024-01-10 21:36:37 +0700 | Merge pull request #6 from duyngo0605/dungviet
+629e0f5 2024-01-11 20:32:05 +0700 | Them quan ly notify
+6f08fc3 2024-01-11 20:33:18 +0700 | Merge pull request #7 from duyngo0605/dungviet
+1e48bb7 2024-01-13 22:18:49 +0700 | handle controller for notify
+3422c39 2024-01-14 00:08:21 +0700 | them giao dien cho notify
+dfbeffe 2024-01-14 00:09:00 +0700 | Merge pull request #8 from duyngo0605/dungviet
+541ffbf 2024-01-14 01:00:13 +0700 | giao dien login
+fdf9e89 2024-01-14 07:48:56 +0700 | fix login
+c53194a 2024-01-14 09:19:54 +0700 | sua doi notify
+81abfd1 2024-01-14 09:20:32 +0700 | Merge pull request #9 from duyngo0605/dungviet
+7bd687e 2024-01-14 15:33:14 +0700 | thêm search noti
+5800464 2024-01-14 16:05:42 +0700 | sửa layout hiện thị username
+2f22b51 2024-01-14 16:13:21 +0700 | Add ViewingSchedule Migrate Class (adding first period field) Change layout to include Schedule
+939d7c3 2024-01-14 18:18:52 +0700 | Merge pull request #10 from duyngo0605/ViewingSchedule
+653d468 2024-01-14 21:18:12 +0700 | fix something
+8f9f807 2024-01-15 21:02:07 +0700 | Merge pull request #11 from duyngo0605/master
+51332e7 2024-01-15 21:48:01 +0700 | New UI
+26efffc 2024-01-15 22:48:13 +0700 | sua login
+15d79ba 2024-01-15 22:48:47 +0700 | Merge pull request #12 from duyngo0605/dungviet
+116a861 2024-01-16 16:18:45 +0700 | Add Import/Export student list via Excel (need UI modification)
+6395105 2024-01-16 17:00:26 +0700 | sua doi giao dien thong tin teacher student
+b2a5a0e 2024-01-16 17:01:23 +0700 | Merge pull request #13 from duyngo0605/dungviet
+8125bae 2024-01-16 23:34:07 +0700 | xử lý đăng kí học phần, thêm một số hàm check logic khi nhập room, tạo lớp ...
+f62faa7 2024-01-16 23:46:05 +0700 | Merge branch 'master' into duyngo
+ec2ad73 2024-01-16 23:46:20 +0700 | Merge pull request #15 from duyngo0605/duyngo
+c38ff4d 2024-01-16 23:56:14 +0700 | fix student details
+fd6a88f 2024-01-16 23:56:55 +0700 | Merge pull request #16 from duyngo0605/duyngo
+a2f2d58 2024-01-17 00:48:40 +0700 | update UI
+55bab42 2024-01-17 10:42:30 +0700 | modify classes info
+7b818d8 2024-01-17 12:07:29 +0700 | handle status for account (active or locked)
+e4d3ef1 2024-01-17 16:57:38 +0700 | sửa kết nối database, tạo querry
+8595ebb 2024-01-17 20:30:55 +0700 | Thêm chức năng change password, tự động tạo mật khẩu phía admin, tự động tạo user và profile khi thêm student và teacher
+a5b8fa9 2024-01-17 21:17:22 +0700 | Merged
+684c895 2024-01-17 21:40:57 +0700 | Merge branch 'master' into huycuong
+8dd49c7 2024-01-17 21:41:06 +0700 | Merge pull request #17 from duyngo0605/huycuong
+9f43635 2024-01-17 21:42:23 +0700 | xử lý tạo phiên đkhp
+764ffd9 2024-01-17 21:42:49 +0700 | xử lý tạo phiên đkhp
+958195b 2024-01-17 21:42:58 +0700 | Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement
+db58b17 2024-01-17 23:00:49 +0700 | fix create user, handle registration session
+6988dda 2024-01-18 09:01:53 +0700 | Hoàn tất dkhp
+0f9d3a9 2024-01-18 09:49:47 +0700 | fix create and edit session in view
+a14c38d 2024-01-18 09:52:59 +0700 | fix querry
+deb4166 2024-01-18 10:28:38 +0700 | add checking duplicate subject in register classes
+063521c 2024-01-18 11:27:49 +0700 | Merge pull request #18 from duyngo0605/master
+ec6d28a 2024-01-18 15:25:34 +0700 | handle display grade of student, display student of particular class
+ba1da66 2024-01-18 15:25:59 +0700 | handle display grade of student, display student of one class
+3c4bba0 2024-01-18 17:15:45 +0700 | Index
+362ce8e 2024-01-18 17:01:15 +0700 | Add import/export for Rooms, Students, Subjects and Teachers
+88cb8c2 2024-01-18 17:42:44 +0700 | Schedule for Student and Teacher
+35b8d33 2024-01-18 18:06:24 +0700 | Add Simple search with Students
+613e4ea 2024-01-18 18:39:40 +0700 | sua UI stu va teach
+762dbe8 2024-01-18 18:41:27 +0700 | Merge pull request #19 from duyngo0605/huycuong
+800878c 2024-01-18 18:44:59 +0700 | Merge pull request #20 from duyngo0605/dungviet
+b6bdc13 2024-01-18 21:58:15 +0700 | sua loi edit + delete, update UI
+6818c26 2024-01-18 22:42:21 +0700 | hoàn thành ghi nhận kết quả học tập
+fe368d7 2024-01-18 22:48:06 +0700 | fix conflict
+c6cee97 2024-01-18 22:49:57 +0700 | Merge branch 'master' into duyngo
+eeed035 2024-01-18 22:50:18 +0700 | Merge pull request #21 from duyngo0605/duyngo
+214308c 2024-01-18 23:05:03 +0700 | add details button for classes to view
+b224330 2024-01-19 03:09:23 +0700 | hoan thien ui + fix bug
+3acb6d0 2024-01-19 08:06:30 +0700 | fix unregister class
+1f534c9 2024-01-19 08:06:36 +0700 | Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement
+709082a 2024-01-19 09:42:58 +0700 | fix manage results
+b792c87 2024-01-19 10:01:34 +0700 | fix student details
+7f57d98 2024-01-19 13:05:58 +0700 | fix nhập điểm
+b413946 2024-01-19 13:10:49 +0700 | fix layout
+22c538f 2024-01-19 13:28:42 +0700 | Add Schedule Selectors
+7750fa5 2024-01-19 13:29:06 +0700 | Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement
+1f42ef2 2024-01-19 13:51:27 +0700 | fix some view
+e915c53 2024-01-19 13:51:33 +0700 | Merge branch 'master' of https://github.com/duyngo0605/SubjectAndClassManagement
+db53fc3 2024-01-19 14:06:47 +0700 | fix edit students
+11a7b1f 2024-01-19 14:13:41 +0700 | fix schedule and stugrade
+29c5451 2024-06-04 22:36:44 +0700 | add ping echo
+115a572 2024-12-19 14:58:18 +0700 | sửa import from excel cho trang student
+1e8a760 2024-12-19 15:08:48 +0700 | thêm import from excel cho subject
+0b8ab1f 2024-12-20 15:39:51 +0700 | thêm appsettings json
