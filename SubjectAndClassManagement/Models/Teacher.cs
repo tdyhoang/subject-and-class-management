@@ -17,8 +17,6 @@ namespace SubjectAndClassManagement.Models
         public string phone_number { get; set; }
 
         public virtual ICollection<Class> Classes { get; set; }
-
-        public User User { get; set; }
     }
 
 }
