@@ -57,6 +57,11 @@
                     </li>
 
                     <li class="nav-item mt-2">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Notification" asp-action="Manage">Notification</a>
+
+                    </li>
+
+                    <li class="nav-item mt-2">
                         <a class="text-decoration-none text-light" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
 
                     </li>
@@ -66,7 +71,7 @@
                 @if (User.IsInRole("student"))
                 {
                     <li class="nav-item mt-3">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Classes" asp-action="Index">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Schedule" asp-action="Index">
                             <i class="fa-solid fa-calendar me-3"></i>Schedule
                         </a>
                     </li>
@@ -84,7 +89,7 @@
                     </li>
 
                     <li class="nav-item mt-2">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Students" asp-action="Index">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="StuInfo" asp-action="Index">
                             <i class="fa-solid fa-gear me-3"></i>Setting and profile
                         </a>
 
@@ -93,7 +98,7 @@
                 @if (User.IsInRole("teacher"))
                 {
                     <li class="nav-item mt-3">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Classes" asp-action="Index">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Schedule" asp-action="Index">
                             <i class="fa-solid fa-calendar me-3"></i>Schedule
                         </a>
                     </li>
@@ -110,7 +115,7 @@
 
                     </li>
                     <li class="nav-item mt-2">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Teachers" asp-action="Index">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="TeacherInfo" asp-action="Index">
                             <i class="fa-solid fa-gear me-3"></i>Setting and profile
                         </a>
 
