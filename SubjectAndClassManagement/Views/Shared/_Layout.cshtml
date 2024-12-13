@@ -1,5 +1,4 @@
-﻿@using System.Security.Claims
-
+﻿
 @{
     
 }
@@ -58,7 +57,7 @@
                     </li>
 
                     <li class="nav-item mt-2">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Notifications" asp-action="Index">Notification</a>
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Notification" asp-action="Manage">Notification</a>
 
                     </li>
 
@@ -73,11 +72,16 @@
                 {
                     <li class="nav-item mt-3">
                         <a class="text-decoration-none text-light" asp-area="" asp-controller="Classes" asp-action="Index">
+                            <i class="fa-solid fa-chalkboard me-3"></i>Classes
+                        </a>
+                    </li>
+                    <li class="nav-item mt-3">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Schedule" asp-action="Index">
                             <i class="fa-solid fa-calendar me-3"></i>Schedule
                         </a>
                     </li>
                     <li class="nav-item mt-2">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Notifications" asp-action="Index">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Notification" asp-action="Index">
                             <i class="fa-solid fa-bell me-3"></i>Notify
                         </a>
 
@@ -100,11 +104,17 @@
                 {
                     <li class="nav-item mt-3">
                         <a class="text-decoration-none text-light" asp-area="" asp-controller="Classes" asp-action="Index">
+                            <i class="fa-solid fa-chalkboard me-3"></i>Classes
+                        </a>
+                    </li>
+
+                    <li class="nav-item mt-3">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Schedule" asp-action="Index">
                             <i class="fa-solid fa-calendar me-3"></i>Schedule
                         </a>
                     </li>
                     <li class="nav-item mt-2">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Notifications" asp-action="Index">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="Notification" asp-action="Index">
                             <i class="fa-solid fa-bell me-3"></i>Notify
                         </a>
 
@@ -130,20 +140,8 @@
             <div class="head mb-5">
                 <div class="dropdown show float-end">
                     <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        @{
-                            if (User.IsInRole("admin"))
-                            {
-                                <h5>Admin</h5>
-                            }
-                            else
-                            {
-                                var username = User.FindFirstValue("username");
-                                @username
-                            }
-                        }
+                        Nguyễn Dương Viết Dũng
                     </a>
-
-
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         @if (User.IsInRole("student"))
@@ -155,7 +153,7 @@
                             <a class="dropdown-item" asp-area="" asp-controller="TeachInfo" asp-action="Index">Information</a>
                         }
 
-                        <a class="dropdown-item" asp-area="" asp-controller="Notifications" asp-action="Index">Notify</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Notification" asp-action="Index">Notify</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" asp-area="" asp-controller="Dashboard" asp-action="Logout">Logout</a>
                     </div>
