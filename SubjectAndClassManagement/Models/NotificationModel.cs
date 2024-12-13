@@ -4,11 +4,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SubjectAndClassManagement.Models
 {
-    public class Notification
+    public class NotificationModel
     {
         [Key]
+        [StringLength(10)]
         [Display(Name = "Notify Id")]
-        public int notify_id { get; set; }
+        public string notify_id { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -21,7 +22,7 @@ namespace SubjectAndClassManagement.Models
 
         [Required]
         [Display(Name = "Decription")]
-        public string notify_description { get; set;}
+        public string notify_decription { get; set;}
 
     }
 }
