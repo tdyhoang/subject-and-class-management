@@ -26,8 +26,6 @@ namespace SubjectAndClassManagement.Models
         public virtual ICollection<StudentRegistration> Registrations { get; set; }
         public virtual ICollection<TuitionPayment> Payments { get; set; }
 
-
-
         public User User { get; set; }
     }
 }

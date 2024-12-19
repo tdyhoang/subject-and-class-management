@@ -161,23 +161,12 @@ namespace SubjectAndClassManagement.Controllers
             {
                 foreach (var classId in selectedClasses)
                 {
-                    // Lấy subject_id của lớp mới
-                    var newClassSubjectId = _context.Classes
-                        .Where(c => c.class_id == classId)
-                        .Select(c => c.subject_id)
-                        .FirstOrDefault();
-                    if (IsSubjectAlreadyRegistered(studentId, newClassSubjectId))
-                    {
-                        error += $"Student has already registered for subject {newClassSubjectId}. Registration failed for class {classId}.\n";
-                        continue;
-                    }
-
                     // Kiểm tra xem lớp đã đăng ký có trùng lịch với các lớp đã đăng ký trước đó không
                     if (IsClassScheduleConflict(studentId, classId))
                     {
                         // Nếu có trùng lịch, bạn có thể thực hiện các xử lý hoặc hiển thị thông báo lỗi
-                        error += $"Class schedule conflict for class {classId}. Registration failed.\n";
-                        continue;
+                        error+=$"Class schedule conflict for class {classId}. Registration failed.\n";
+                        break;
                     }
 
                     success += $"Successfully registered for class {classId}.\n";
@@ -202,7 +191,6 @@ namespace SubjectAndClassManagement.Controllers
 
             return RedirectToAction("Register", "Classes");
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -273,12 +261,5 @@ namespace SubjectAndClassManagement.Controllers
 
             return false; // Không có trùng lịch
         }
-
-        private bool IsSubjectAlreadyRegistered(string studentId, string subjectId)
-        {
-            return _context.StudentRegistrations
-                .Any(sr => sr.student_id == studentId && sr.Class.Subject.subject_id == subjectId);
-        }
-
     }
 }
