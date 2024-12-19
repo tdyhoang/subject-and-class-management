@@ -53,9 +53,7 @@
                     </li>
 
                     <li class="nav-item mt-2">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="RegistrationSessions" asp-action="Index">
-                            <i class="fa-solid fa-chalkboard me-3"></i>Classes Registrations
-                        </a>
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="StudentRegistrations" asp-action="Index">Student Registrations</a>
 
                     </li>
 
@@ -90,7 +88,7 @@
 
                     </li>
                     <li class="nav-item mt-2">
-                        <a class="text-decoration-none text-light" asp-area="" asp-controller="StuGrade" asp-action="Details" asp-route-id="@User.FindFirstValue("username")">
+                        <a class="text-decoration-none text-light" asp-area="" asp-controller="StuGrade" asp-action="Index">
                             <i class="fa-solid fa-book-open me-3"></i>Grade
                         </a>
 

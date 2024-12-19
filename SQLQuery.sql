@@ -1,4 +1,4 @@
-﻿CREATE TABLE Rooms (
+CREATE TABLE Rooms (
     room_id NVARCHAR(10) PRIMARY KEY,
     room_capacity INT CHECK (room_capacity >= 40),
     building_name NVARCHAR(255)
@@ -22,7 +22,7 @@ CREATE TABLE Students (
     student_id NVARCHAR(10) PRIMARY KEY,
     student_name NVARCHAR(255) NOT NULL,
     email NVARCHAR(255),
-	academic_year int,
+	academic_year NVARCHAR(20),
     phone_number NVARCHAR(20)
 );
 
@@ -62,24 +62,6 @@ BEGIN
     INNER JOIN inserted ON Classes.class_id = inserted.class_id;
 END;
 
--- Tạo hàm kiểm tra
-CREATE FUNCTION dbo.CheckOpenSessionCount()
-RETURNS INT
-AS
-BEGIN
-    DECLARE @OpenSessionCount INT;
-    SELECT @OpenSessionCount = COUNT(*)
-    FROM RegistrationSessions
-    WHERE status = 'open';
-
-    RETURN @OpenSessionCount;
-END;
-
--- Tạo ràng buộc CHECK sử dụng hàm kiểm tra
-ALTER TABLE RegistrationSessions
-ADD CONSTRAINT CK_MaxOneOpenSession
-CHECK (dbo.CheckOpenSessionCount() <= 1);
-
 
 
 CREATE TABLE StudentRegistrations (
@@ -93,7 +75,6 @@ CREATE TABLE StudentRegistrations (
     FOREIGN KEY (class_id) REFERENCES Classes(class_id)
 );
 
-
 CREATE TRIGGER trg_UpdateNumberOfMembers
 ON StudentRegistrations
 AFTER INSERT, DELETE
@@ -106,93 +87,26 @@ BEGIN
 END;
 
 
-CREATE TABLE RegistrationSessions (
-    session_id NVARCHAR(30) PRIMARY KEY,
-    start_date DATETIME,
-    end_date DATETIME,
-	semester INT,
-	academic_year NVARCHAR(20),
-    status NVARCHAR(20) CHECK (status IN ('open', 'closed')),
-);
-
-alter table RegistrationSessions add constraint CHECK_date
-CHECK (start_date<=end_date)
-
-CREATE TRIGGER trg_GenerateSessionId
-ON RegistrationSessions
-AFTER INSERT
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    DECLARE @nextSessionId NVARCHAR(30); 
-
-    -- Tìm session_id cuối cùng trong bảng
-    SELECT TOP 1 @nextSessionId = session_id
-    FROM RegistrationSessions
-    ORDER BY session_id DESC;
-
-    -- Trích xuất số thứ tự từ session_id cuối cùng
-    DECLARE @lastIndex INT;
-    SET @lastIndex = CAST(SUBSTRING(@nextSessionId, LEN('RegistrationSessions') + 1, LEN(@nextSessionId)) AS INT);
-
-    -- Tạo session_id mới
-    DECLARE @newIndex INT;
-    SET @newIndex = ISNULL(@lastIndex + 1, 1);
-    DECLARE @newSessionId NVARCHAR(30);
-    SET @newSessionId = 'RegistrationSessions' + RIGHT('000' + CAST(@newIndex AS NVARCHAR(3)), 3);
-
-    -- Cập nhật session_id trong bảng inserted
-    UPDATE RegistrationSessions
-    SET session_id = @newSessionId
-    WHERE session_id IN (SELECT session_id FROM inserted);
-END;
-
-
 CREATE TABLE StudentResults
 (
 	student_results_id NVARCHAR(20) PRIMARY KEY,
-	registration_id NVARCHAR(20) FOREIGN KEY REFERENCES StudentRegistrations(registration_id),
+	student_id NVARCHAR(10),
+    class_id NVARCHAR(10),
+	subject_id NVARCHAR(10),
     grade FLOAT,
+	FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (class_id) REFERENCES Classes(class_id),
+	FOREIGN KEY (subject_id) REFERENCES Subjects(subject_id),
 )
 
-CREATE TABLE ResultColumns (
+CREATE TABLE ResultColumn (
     resultcolumn_id int IDENTITY(1,1) PRIMARY KEY,
     student_results_id NVARCHAR(20) FOREIGN KEY REFERENCES StudentResults(student_results_id),
-	column_name NVARCHAR(30),
     grade FLOAT,
     weight FLOAT,
     CHECK (grade>=0 and grade <=10),
     CHECK (weight>0 and weight<=1),
 )
-
-drop trigger trg_DeleteStudentResult
-
--- Trigger to automatically create StudentResults when a new StudentRegistration is inserted
-CREATE TRIGGER trg_CreateStudentResult
-ON StudentRegistrations
-AFTER INSERT
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    INSERT INTO StudentResults (student_results_id, registration_id, grade)
-    SELECT NEWID(), inserted.registration_id, NULL
-    FROM inserted;
-END;
-
--- Trigger to automatically delete StudentResults when a StudentRegistration is deleted
-CREATE TRIGGER trg_DeleteStudentResult
-ON StudentRegistrations
-AFTER DELETE
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    DELETE FROM StudentResults
-    WHERE registration_id IN (SELECT deleted.registration_id FROM deleted);
-END;
-
 
 CREATE TABLE TuitionPayments (
     payment_id NVARCHAR(10) PRIMARY KEY,
@@ -266,8 +180,6 @@ BEGIN
 
 END;
 
-
-
 CREATE TRIGGER trg_CreateUserAndProfile_Teacher
 ON Teachers
 AFTER INSERT
@@ -310,16 +222,3 @@ insert into Users values('admin', 'admin', 'admin', null, null, 'active')
 select * from Students
 select * from Users
 select * from Profiles
-select * from RegistrationSessions
-select * from Classes
-select * from StudentResults
-select * from StudentRegistrations
-select * from ResultColumns
-
-drop table ResultColumn
-
-alter table StudentResults alter column grade FLOAT
-
-insert into StudentResults values('R_21521999_SE100.O11', '21521999_SE100.O11', 5.5)
-insert into ResultColumns values ('R_21521999_SE100.O11', 'Attendance', 5.0, 0.5)
-insert into ResultColumns values ('R_21521999_SE100.O11', 'Final', 6.0, 0.5)
