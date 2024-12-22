@@ -1,26 +1,6 @@
 ﻿USE SubjectAndClassManagement;
 GO
 
--- Xóa dữ liệu cũ (nếu cần)
-DELETE FROM ResultColumns;
-DELETE FROM StudentResults;
-DELETE FROM Fee_Subjects;
-DELETE FROM TuitionPayments;
-DELETE FROM StudentRegistrations;
-DELETE FROM Classes;
-DELETE FROM RegistrationSessions;
-DELETE FROM Profiles WHERE username IN (SELECT username FROM Users WHERE user_type <> N'admin');
-DELETE FROM Users WHERE user_type <> N'admin';
-DELETE FROM Students;
-DELETE FROM Teachers;
-DELETE FROM Subjects;
-DELETE FROM Rooms;
-DELETE FROM Notifications;
-GO
-
--- Thêm dữ liệu mẫu cho admin
-INSERT INTO Users VALUES('admin', 'admin', 'admin', NULL, NULL, 'active');
-GO
 
 -- Thêm dữ liệu mẫu cho bảng Rooms
 INSERT INTO Rooms (room_id, room_capacity, building_name) VALUES
@@ -76,6 +56,10 @@ INSERT INTO Students (student_id, student_name, email, academic_year, phone_numb
 (N'SV008', N'Trần Văn Hoàng', N'23520008@gm.uit.edu.vn', 2023, N'0889012347'),
 (N'SV009', N'Nguyễn Thị Huệ', N'23520009@gm.uit.edu.vn', 2023, N'0890123458'),
 (N'SV010', N'Lê Thị Khánh', N'23520010@gm.uit.edu.vn', 2023, N'0801234569');
+GO
+
+-- Thêm dữ liệu mẫu cho admin
+INSERT INTO Users VALUES('admin', 'admin', 'admin', NULL, NULL, 'active');
 GO
 
 -- Thêm dữ liệu mẫu cho bảng Classes
